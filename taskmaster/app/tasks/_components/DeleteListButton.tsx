@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { TfiPencil } from 'react-icons/tfi'
 import { FaRegTrashCan } from 'react-icons/fa6';
+import prisma from '@/prisma/client';
 
 interface Props {
     id: String
@@ -15,47 +16,40 @@ interface Props {
     completed: boolean
 }
 
-const Buttons = ({id, taskName, dueOn, completed}: Props) => {
+const DeleteListButton = ({id, taskName, dueOn, completed}: Props) => {
     const router = useRouter()
     const [error, setError] = useState(false);
     const [deleted, setDeleted] = useState(false);
 
-    const deleteTask = async () => {
+    async function deleteAllTasks() {
         try {
-            console.log("TRYING TO DELETE")
             setDeleted(true)
-            await axios.delete(`http://localhost:3000/api/tasks/${id}`);
+            await axios.delete(`http://localhost:3000/api/tasks`) 
             router.push('/tasks/all');
             router.refresh();
         } catch (error) {
             setDeleted(false);
             setError(true);
-        }
-    };
+       }
+    }
+      
 
     return (
         <>
-            <button 
-                className="p-3 mr-2 mb-2 bg-yellow-900 hover:bg-amber-700 hover:cursor-pointer rounded-lg"     
-            >
-                <Link href={`http://localhost:3000/tasks/edit/${id}`}>
-                    <TfiPencil className="fill-current text-white" />
-                </Link>
-            </button>
             <AlertDialog.Root>
                 <AlertDialog.Trigger>
                     <button 
-                        className='mr-3 mt-3 p-3 bg-yellow-900 hover:bg-amber-700 hover:cursor-pointer rounded-lg text-white'
+                        className="p-1 mr-5 bg-white opacity-75 border-2 border-yellow-900 hover:bg-yellow-700 rounded-xl text-yellow-950 inline"
                         disabled={deleted}
                     >
-                        <FaRegTrashCan className='fill-current text-white' />
+                        Delete All Tasks
                     </button>
                 </AlertDialog.Trigger>
                 <AlertDialog.Content>
                     <div className="mt-5 mb-7  text-yellow-900 border-yellow-900">
                         <AlertDialog.Title>Confirm</AlertDialog.Title>
                         <AlertDialog.Description>
-                            Are you sure you want to delete this task?
+                            Are you sure you want to delete all tasks on this list?
                         </AlertDialog.Description>
                          <AlertDialog.Cancel>
                             <button 
@@ -67,7 +61,7 @@ const Buttons = ({id, taskName, dueOn, completed}: Props) => {
                         <AlertDialog.Action>
                             <button
                                 className='mr-3 mt-3 p-3 bg-yellow-900 hover:bg-yellow-950 hover:cursor-pointer rounded-lg text-white'
-                                onClick={deleteTask}
+                                onClick={deleteAllTasks}
                             >
                                 Delete
                             </button>
@@ -79,7 +73,7 @@ const Buttons = ({id, taskName, dueOn, completed}: Props) => {
                 <AlertDialog.Content>
                     <AlertDialog.Title>Error</AlertDialog.Title>
                     <AlertDialog.Description>
-                        Unable to delete task.
+                        Unable to delete task list.
                     </AlertDialog.Description>
                     <button 
                         className='mr-3 mt-3 p-3 bg-yellow-900 hover:bg-yellow-950 hover:cursor-pointer rounded-lg text-white'
@@ -93,6 +87,6 @@ const Buttons = ({id, taskName, dueOn, completed}: Props) => {
     );
 }
 
-export default Buttons;
+export default DeleteListButton;
 
  

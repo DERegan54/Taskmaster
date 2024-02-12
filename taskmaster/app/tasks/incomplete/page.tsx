@@ -35,19 +35,12 @@ const IncompletePage = async ({completed}: Props) => {
 
   return (
     <div className='image-container'>
-      <div>
-        <div className="ml-10 pt-10">
+      <div className="ml-10 pt-10">
           <div className='ml-10 text-white'>
             <Heading size="8" as="h1">To-do List:</Heading>
           </div>
         </div>
-        <div className="mt-5 -ml-0">
-          <form action={deleteAllTasks}>
-            <button className="p-1 ml-16 mr-5 bg-white opacity-75 border-2 border-yellow-900 hover:bg-yellow-700 rounded-xl text-yellow-950 inline"><a href='/tasks/new'>Add a Task</a></button>
-            <button className="p-1 bg-white opacity-75 border-2 border-yellow-900 hover:bg-yellow-700 rounded-xl text-yellow-950 inline">Reset Tasks</button>
-          </form>
-        </div> 
-      </div>
+      <button className="p-1 mt-5 ml-28 mr-5 bg-white opacity-75 border-2 border-yellow-900 hover:bg-yellow-700 rounded-xl text-yellow-950 inline"><a href='/tasks/new'>Add a Task</a></button>
       <div className="ml-12 flex">  
         <ul>
           {tasks.map(task => (
