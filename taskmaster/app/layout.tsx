@@ -1,7 +1,6 @@
 import '@radix-ui/themes/styles.css';
 import './theme-config.css';
 import './globals.css'
-import { ClerkProvider } from '@clerk/nextjs'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import NavBar from './NavBar'
@@ -23,15 +22,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={inter.variable}>
-          <Theme>
-            <NavBar />
-            <main className='p-5'>{children}</main>
-          </Theme>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <body className={inter.variable}>
+        <Theme>
+          <NavBar />
+          <main className='p-5'>{children}</main>
+        </Theme>
+      </body>
+    </html>
   )
 }
+

@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Callout } from '@radix-ui/themes';
 import ErrorMessage from '@/app/components/ErrorMessage';
-
 import { updateTaskSchema } from '@/app/validationSchemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useForm } from  'react-hook-form';
 import { useRouter } from 'next/navigation';
 import { Task } from '@prisma/client';
+import Spinner from '@/app/components/Spinner';
 
 
 type UpdateTaskFormData = z.infer<typeof updateTaskSchema>
@@ -81,7 +81,7 @@ const UpdateTaskForm = ({ task }: { task: Task }) => {
                             <button 
                                 className="p-1 bg-white border-2 border-yellow-900 opacity-75 hover:bg-yellow-700 rounded-xl text-yellow-900"
                                 disabled={submitted}>
-                                    Update Task
+                                    Update Task {submitted && <Spinner />}
                             </button>
                         </form>
                     </div>

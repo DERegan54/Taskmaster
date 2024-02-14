@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { Callout } from '@radix-ui/themes';
 import ErrorMessage from '@/app/components/ErrorMessage';
+import LoadingSpinner from '@/app/components/Spinner';
 import { createTaskSchema } from '@/app/validationSchemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -77,6 +78,7 @@ const NewTaskForm = () => {
                     <button 
                         className="p-1 border-2 border-yellow-900 bg-white opacity-75  hover:bg-yellow-700 rounded-xl text-yellow-950"
                         disabled={submitted}>
+                        {submitted && <LoadingSpinner />}
                             Submit New Task
                     </button>
                 </form>

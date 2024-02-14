@@ -24,7 +24,7 @@ const Home = async () => {
               <Heading size="5" as="h1">Manage your tasks like a boss!</Heading>
             </div>
             <div>
-            <button className="p-1 mt-5 bg-white opacity-75 border-2 border-yellow-900 hover:bg-yellow-700 rounded-xl text-yellow-950 inline"><a href='/tasks/all'>Start Managing Tasks</a></button>
+            <button className="p-1 mt-5 -mr-3 bg-white opacity-75 border-2 border-yellow-900 hover:bg-yellow-700 rounded-xl text-yellow-950 inline"><a href='/tasks/all'>Start Managing Tasks</a></button>
             </div>
           </div> 
       </div>

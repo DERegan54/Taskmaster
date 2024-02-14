@@ -4,18 +4,16 @@ import React, { useState} from 'react';
 import axios from 'axios';
 import { AlertDialog } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import Link from 'next/link';import { useForm } from 'react-hook-form';
 import { TfiPencil } from 'react-icons/tfi'
 import { FaRegTrashCan } from 'react-icons/fa6';
 
+
 interface Props {
     id: String
-    taskName: string
-    dueOn: string
-    completed: boolean
 }
 
-const Buttons = ({id, taskName, dueOn, completed}: Props) => {
+const Buttons = ({id}: Props) => {
     const router = useRouter()
     const [error, setError] = useState(false);
     const [deleted, setDeleted] = useState(false);
@@ -35,11 +33,9 @@ const Buttons = ({id, taskName, dueOn, completed}: Props) => {
 
     return (
         <>
-            <button 
-                className="p-3 mr-2 mb-2 bg-yellow-900 hover:bg-amber-700 hover:cursor-pointer rounded-lg"     
-            >
-                <Link href={`http://localhost:3000/tasks/edit/${id}`}>
-                    <TfiPencil className="fill-current text-white" />
+            <button className="p-3 mr-2 mb-2 bg-yellow-900 hover:bg-amber-700 hover:cursor-pointer rounded-lg">
+                <Link href='/tasks/update'>
+                    <TfiPencil className="fill-current text-white"/>
                 </Link>
             </button>
             <AlertDialog.Root>
@@ -94,5 +90,3 @@ const Buttons = ({id, taskName, dueOn, completed}: Props) => {
 }
 
 export default Buttons;
-
- 

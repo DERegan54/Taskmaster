@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import prisma from '@/prisma/client';
+import prisma from "@/prisma/client";
 import { updateTaskSchema } from "@/app/validationSchemas";
 
 interface Props {
@@ -68,4 +68,5 @@ export async function DELETE (request: NextRequest,{ params }: { params: {id: st
 
     return NextResponse.json({ message: "Task deleted" }, { status: 200 });
 }
+
 

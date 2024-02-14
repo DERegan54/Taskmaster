@@ -17,15 +17,7 @@ interface Props {
 
 const TaskCard = async ( { id, taskName, dueOn, completed, toggleTask }: Props) => {
     console.log('id: ', id, 'taskName: ', taskName, 'dueOn: ', dueOn, 'completed: ', completed)
-    const router = useRouter();
     
-    let trimDueOn = (dueOn: string) => {
-        return dueOn.replace(/\D/g,"")
-    }
-    
-    let trimmedDueOn = trimDueOn(dueOn)
-    console.log(trimmedDueOn)
-
     return (
         <div>
             <div className="w-64 mt-5 text-yellow-900 border-yellow-900">
@@ -55,7 +47,6 @@ const TaskCard = async ( { id, taskName, dueOn, completed, toggleTask }: Props) 
                                     onChange={e => toggleTask(id, e.target.checked)}
                                 />
                             </div>
-                            <div>{trimmedDueOn}</div>
                             <Buttons id={id} taskName={''} dueOn={''} completed={false} />
                         </Box>
                     </Flex>
@@ -66,4 +57,3 @@ const TaskCard = async ( { id, taskName, dueOn, completed, toggleTask }: Props) 
 }
 
 export default TaskCard;
-
