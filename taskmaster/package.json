@@ -1,5 +1,5 @@
 {
-  "name": "taskmaster",
+  "name": "taskmanager-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,29 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.6",
-    "@hookform/resolvers": "^3.3.1",
     "@prisma/client": "^5.3.1",
-    "@radix-ui/themes": "^2.0.3",
-    "axios": "^1.6.7",
-    "clerk": "^0.6.1",
-    "next": "14.1.0",
-    "prisma": "^5.3.1",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-hook-form": "^7.46.1",
-    "react-icons": "^5.0.1",
-    "zod": "^3.22.4"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
+    "@radix-ui/themes": "^1.1.2",
+    "@types/node": "20.11.5",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "autoprefixer": "10.4.17",
+    "classnames": "^2.3.2",
+    "easymde": "^2.18.0",
+    "eslint": "8.56.0",
     "eslint-config-next": "14.1.0",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "next": "14.1.0",
+    "postcss": "8.4.33",
+    "prisma": "^5.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.11.0",
+    "react-simplemde-editor": "^5.2.0",
+    "tailwindcss": "3.4.1",
+    "typescript": "5.3.3",
+    "zod": "^3.22.2"
   }
 }
