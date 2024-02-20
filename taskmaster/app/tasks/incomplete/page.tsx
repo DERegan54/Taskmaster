@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { FunctionComponent } from 'react';
 import { Heading } from '@radix-ui/themes'
 import { redirect } from 'next/navigation';
 import prisma from '@/prisma/client';
