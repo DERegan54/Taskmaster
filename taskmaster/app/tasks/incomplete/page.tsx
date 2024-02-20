@@ -22,7 +22,7 @@ async function getIncompleteTasks (completed: boolean){
     completed: boolean
   }
 
-const IncompletePage = async ({completed}: Props) => {
+const IncompletePage: FunctionComponent<Props> = async ({completed}) => {
 
     const tasks = await getIncompleteTasks(completed)
 
