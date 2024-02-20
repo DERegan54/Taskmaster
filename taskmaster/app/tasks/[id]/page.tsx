@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, FunctionComponent } from 'react'
 import { useRouter } from 'next/navigation';
 import { Card, Flex, Box, Text} from '@radix-ui/themes';
 import Buttons from '../_components/Buttons';
