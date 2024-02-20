@@ -15,7 +15,7 @@ interface Props {
 }
 
 
-const TaskCard = async ( { id, taskName, dueOn, completed, toggleTask }: Props) => {
+const TaskCard: FunctionComponent<Props> = async ({ id, taskName, dueOn, completed, toggleTask }) => {
     console.log('id: ', id, 'taskName: ', taskName, 'dueOn: ', dueOn, 'completed: ', completed)
     
     return (
