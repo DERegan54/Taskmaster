@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-async-client-component */
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, FunctionComponent } from 'react'
 
 import { updateTaskSchema } from '@/app/validationSchemas';
 import  { z } from 'zod';
