@@ -9,7 +9,7 @@ interface Props {
   params: { id: string }; 
 }
 
-const EditTaskPage = async ({ params }: Props) => {
+const EditTaskPage: FunctionComponent<Props> = async ({ params }) => {
   const task = await prisma.task?.findUnique({ where: {id: parseInt(params.id)}});
 
   if (!task) {
