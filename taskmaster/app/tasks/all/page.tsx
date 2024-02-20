@@ -31,7 +31,7 @@ async function deleteTask(id: string) {
     redirect('/tasks')
   }
 
-const AllTasksPage = async ({id, taskName, dueOn, completed}: Props) => {
+const AllTasksPage: FunctionComponent<Props> = async ({id, taskName, dueOn, completed}) => {
   const tasks = await getTasks();
 
   if (!tasks) {
