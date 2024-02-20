@@ -17,7 +17,7 @@ interface Props {
   completed: boolean
 }
 
-const UpdateTaskPage = async ({ id, taskName, dueOn, completed}: Props) => {
+const UpdateTaskPage: FunctionComponent<Props> = async ({ id, taskName, dueOn, completed}) => {
   
   return (
     <div>  
