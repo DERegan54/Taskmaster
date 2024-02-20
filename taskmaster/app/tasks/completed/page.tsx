@@ -33,7 +33,7 @@ async function deleteAllTasks(data: FormData) {
     completed: boolean
   }
 
-const CompletedPage = async ({completed}: Props) => {
+const CompletedPage: FunctionComponent<Props> = async ({completed}) => {
 
     const todos = await getTasks(completed)
 
