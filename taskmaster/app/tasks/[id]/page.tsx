@@ -6,16 +6,16 @@ import { Card, Flex, Box, Text} from '@radix-ui/themes';
 import Buttons from '../_components/Buttons';
 
 
-interface Props {
-    id: string
-    taskName: string
-    dueOn: string
-    completed: boolean
-    toggleTask: (id: string, completed: boolean) => void
+export type Props = {
+        id: string,
+        taskName: string,
+        dueOn: string,
+        completed: boolean,
+        toggleTask: (id: string, completed: boolean) => void,
 }
 
 
-const TaskCard: FunctionComponent<Props> = async ({ id, taskName, dueOn, completed, toggleTask }) => {
+const TaskCard: React.FC<Props> = async ({ id, taskName, dueOn, completed, toggleTask }: Props) => {
     console.log('id: ', id, 'taskName: ', taskName, 'dueOn: ', dueOn, 'completed: ', completed)
     
     return (
